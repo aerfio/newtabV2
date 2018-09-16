@@ -3,7 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import MainStore from './stores/mainStore';
-const store = new MainStore();
-ReactDOM.render(<App store={store} />, document.getElementById('root'));
+import store from './stores/MainStore';
+import './mobxConfig';
+import DevTools from 'mobx-react-devtools';
+
+ReactDOM.render(
+	<React.Fragment>
+		<App store={store} />
+		{process.env.NODE_ENV !== 'production' && <DevTools />}
+	</React.Fragment>,
+	document.getElementById('root'),
+);
 registerServiceWorker();
