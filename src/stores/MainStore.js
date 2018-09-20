@@ -1,7 +1,7 @@
-import { observable, computed, decorate, autorun, reaction } from 'mobx';
+import { observable, computed, decorate } from 'mobx';
 export class MainStore {
 	todos = ['as', 'ds'];
-	myStr = observable.box('myStr');
+	myStr = observable.box('omfg');
 	get todoCount() {
 		return this.todos.length;
 	}
