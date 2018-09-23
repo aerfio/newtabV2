@@ -1,0 +1,35 @@
+@import './../../colors';
+.plan-container {
+	z-index: 1000;
+	position: fixed;
+	top: 15px;
+	right: -614px;
+	width: 614px;
+
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+
+.plan-container::before {
+	content: '';
+	display: block;
+	height: 510px;
+	width: 6px;
+	background-color: $accent-color;
+	margin-top: 15px;
+	float: left;
+	margin-left: -6px;
+	border-bottom-left-radius: 3px;
+	border-top-left-radius: 3px;
+}
+.plan-container:hover {
+	right: 0;
+}
+
+.plan-container img {
+	margin: 0;
+
+	max-width: 100%;
+}
