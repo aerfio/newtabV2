@@ -1,0 +1,12 @@
+@import './../../colors';
+
+.weather-textarea {
+	border: none;
+	resize: none;
+	background-color: $primary-color;
+	color: $text-color;
+	height: 100%;
+	width: 100%;
+	grid-area: weather;
+	outline-style: none;
+}
