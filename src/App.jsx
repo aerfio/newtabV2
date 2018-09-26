@@ -5,7 +5,7 @@ import Clock from './Components/Clock/Clock';
 import TradeSaturdays from './Components/TradeSaturdays/TradeSaturdays';
 import EvenOrOddWeek from './Components/EvenOrOddWeek/EvenOrOddWeek';
 import CurrentDate from './Components/CurrentDate/CurrentDate';
-import Searchbar from './Components/Searchbar/Searchbar';
+import MainSection from './Components/MainSection/MainSection';
 import Plan from './Components/Plan/Plan';
 import Weather from './Components/Weather/Weather';
 // if (process.env.NODE_ENV !== 'production') {
@@ -19,10 +19,10 @@ class App extends Component {
 				<Clock />
 				<TradeSaturdays />
 				<CurrentDate />
-				<Searchbar />
 				<Plan />
 				<Weather />
 				<EvenOrOddWeek />
+				<MainSection />
 			</div>
 		);
 	}

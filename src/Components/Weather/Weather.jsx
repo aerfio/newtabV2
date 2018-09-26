@@ -73,6 +73,7 @@ Wind: ${wind}m/s`;
 				) {
 					return element;
 				}
+				return null;
 			})
 			.filter(e => !!e);
 		const longForecast = weatherAtProperHours
@@ -85,15 +86,11 @@ Wind: ${wind}m/s`;
 				const tmpDesc = el.weather[0].description;
 				const description = tmpDesc[0].toUpperCase() + tmpDesc.substring(1);
 				let separator = '';
-				if (arr[index - 1]) {
-					let compareDates =
-						arr[index - 1].dt_txt.substring(8, 10) + '-' + arr[index - 1].dt_txt.substring(5, 7) !== date;
+				const prevElement = arr[index - 1];
+				if (prevElement) {
+					let compareDates = prevElement.dt_txt.substring(8, 10) + '-' + prevElement.dt_txt.substring(5, 7) !== date;
 					separator = compareDates ? '\n' : '';
 				}
-
-				// if (!(arr[index - 1] && compareDates)) {
-				// 	separator = '\n';
-				// }
 				return `${separator}${weekday} ${date} ${time}: ${temp}, ${wind}, ${description}`;
 			})
 			.join('\n');

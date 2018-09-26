@@ -126,18 +126,16 @@ export default class Searchbar extends Component {
 		};
 
 		return (
-			<div className={'searchbar-container'}>
-				<form onSubmit={this.onSubmit}>
-					<Autosuggest
-						suggestions={suggestions}
-						onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-						onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-						getSuggestionValue={getSuggestionValue}
-						renderSuggestion={renderSuggestion}
-						inputProps={inputProps}
-					/>
-				</form>
-			</div>
+			<form onSubmit={this.onSubmit} className={'searchbar-container'}>
+				<Autosuggest
+					suggestions={suggestions}
+					onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+					onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+					getSuggestionValue={getSuggestionValue}
+					renderSuggestion={renderSuggestion}
+					inputProps={inputProps}
+				/>
+			</form>
 		);
 	}
 }

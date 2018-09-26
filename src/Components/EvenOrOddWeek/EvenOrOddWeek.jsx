@@ -1,7 +1,8 @@
+// eslint-disable
 import React from 'react';
 import './EvenOrOddWeek.css';
 const EvenOrOddWeek = () => {
-	const parity = new Date().getWeek() % 2 == 0;
+	const parity = getWeek() % 2 === 0;
 
 	return (
 		<div className={'even_or_odd_week-container'}>
@@ -11,8 +12,8 @@ const EvenOrOddWeek = () => {
 };
 export default EvenOrOddWeek;
 
-Date.prototype.getWeek = function() {
-	var date = new Date(this.getTime());
+const getWeek = function() {
+	var date = new Date();
 	date.setHours(0, 0, 0, 0);
 	// Thursday in current week decides the year.
 	date.setDate(date.getDate() + 3 - ((date.getDay() + 6) % 7));
