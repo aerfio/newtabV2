@@ -1,13 +1,13 @@
 @import 'colors';
 .App {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
 	//grid-template-rows: 25% 100px auto;
-	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 6fr;
 	grid-template-areas:
-		'. . date saturday saturday'
-		'. . clock . .'
-		'xd3 finder finder finder .';
+		'weather weather date saturday saturday'
+		'weather weather clock even_or_odd even_or_odd'
+		'weather weather finder . .';
 	width: 100%;
 
 	background-color: $primary-color;

@@ -4,7 +4,7 @@ import './Plan.css';
 const Plan = () => {
 	return (
 		<div className={'plan-container'}>
-			<img src={plan} />;
+			<img src={plan} alt={'my_plan_for_uni'} />;
 		</div>
 	);
 };

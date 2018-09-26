@@ -25,9 +25,8 @@ export class TradeSaturdays extends Component {
 	};
 
 	render() {
-		const IsSaturday = new Date().getDay() === 6;
+		const IsSaturday = new Date().getDay() === 0;
 		let text;
-
 		if (IsSaturday) {
 			if (this.isTradeSaturday()) {
 				text = 'Dzisiaj jest niedziela handlowa';
