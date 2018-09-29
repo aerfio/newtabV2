@@ -1,11 +1,17 @@
 import React from 'react';
+import { action } from 'mobx';
 import './Navbutton.css';
-const Navbutton = ({ text, showPage }) => {
+import { observer } from 'mobx-react';
+const Navbutton = ({ text, store }) => {
 	return (
-		<button onClick={showPage} className="navbutton">
+		<button
+			onClick={action(`change page to '${text}'`, () => {
+				store.page = text;
+			})}
+			className="navbutton">
 			{text}
 		</button>
 	);
 };
 
-export default Navbutton;
+export default observer(Navbutton);

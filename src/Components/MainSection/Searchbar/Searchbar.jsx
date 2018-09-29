@@ -126,7 +126,7 @@ export default class Searchbar extends Component {
 		};
 
 		return (
-			<form onSubmit={this.onSubmit} className={'searchbar-container'}>
+			<form onSubmit={this.onSubmit}>
 				<Autosuggest
 					suggestions={suggestions}
 					onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}

@@ -1,23 +1,21 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import './Navbar.css';
 import Navbutton from './NavButton/Navbutton';
-if (process.env.NODE_ENV !== 'production') {
-	const { whyDidYouUpdate } = require('why-did-you-update');
-	whyDidYouUpdate(React);
-}
-export class Navbar extends PureComponent {
-	state = { pageToShow: 1 };
+import store from './../../../stores/MainStore';
+import { observer } from 'mobx-react';
+// if (process.env.NODE_ENV !== 'production') {
+// 	const { whyDidYouUpdate } = require('why-did-you-update');
+// 	whyDidYouUpdate(React);
+// }
+export class Navbar extends Component {
 	render() {
 		return (
-			<div>
-				<div style={{ display: 'flex', justifyContent: 'center' }}>
-					<Navbutton text="Links" showPage={() => this.setState({ pageToShow: 1 })} />
-					<Navbutton text="Todo" showPage={() => this.setState({ pageToShow: 2 })} />
-				</div>
-				{this.state.pageToShow}
+			<div style={{ display: 'flex', justifyContent: 'center' }}>
+				<Navbutton text="Links" store={store} />
+				<Navbutton text="Notes" store={store} />
 			</div>
 		);
 	}
 }
 
-export default Navbar;
+export default observer(Navbar);

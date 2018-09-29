@@ -20,21 +20,21 @@ export class Weather extends Component {
 		});
 
 		try {
-			const getCurrentWeather = () =>
+			const getCurrentWeather = locat =>
 				axios.get(
-					`https://api.openweathermap.org/data/2.5/weather?lat=${Number(location.latitude).toFixed(2)}&lon=${Number(
-						location.longitude,
+					`https://api.openweathermap.org/data/2.5/weather?lat=${Number(locat.latitude).toFixed(2)}&lon=${Number(
+						locat.longitude,
 					).toFixed(2)}&units=metric&appid=${apiKey}`,
 				);
-			const getFiveDaysWeather = () =>
+			const getFiveDaysWeather = locat =>
 				axios.get(
-					`https://api.openweathermap.org/data/2.5/forecast?lat=${Number(location.latitude).toFixed(2)}&lon=${Number(
-						location.longitude,
+					`https://api.openweathermap.org/data/2.5/forecast?lat=${Number(locat.latitude).toFixed(2)}&lon=${Number(
+						locat.longitude,
 					).toFixed(2)}&units=metric&appid=${apiKey}`,
 				);
 			let location = await getGeolocation;
 
-			let [wthrCurr, wthrFiveDays] = await Promise.all([getCurrentWeather(), getFiveDaysWeather()]);
+			let [wthrCurr, wthrFiveDays] = await Promise.all([getCurrentWeather(location), getFiveDaysWeather(location)]);
 			this.setState({ weatherCurr: wthrCurr.data, weatherFiveDays: wthrFiveDays.data });
 		} catch (err) {
 			err.message && console.error(err.message);

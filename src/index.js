@@ -10,7 +10,7 @@ import DevTools from 'mobx-react-devtools';
 ReactDOM.render(
 	<React.Fragment>
 		<App store={store} />
-		{process.env.NODE_ENV !== 'production' && <DevTools noPanel={true} />}
+		{process.env.NODE_ENV !== 'production' && <DevTools noPanel={false} />}
 	</React.Fragment>,
 	document.getElementById('root'),
 );

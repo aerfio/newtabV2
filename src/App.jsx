@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import { observer } from 'mobx-react';
 import Clock from './Components/Clock/Clock';
 import TradeSaturdays from './Components/TradeSaturdays/TradeSaturdays';
 import EvenOrOddWeek from './Components/EvenOrOddWeek/EvenOrOddWeek';
@@ -28,4 +27,4 @@ class App extends Component {
 	}
 }
 
-export default observer(App);
+export default App;
