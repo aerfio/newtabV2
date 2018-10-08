@@ -1,6 +1,7 @@
 import { observable, decorate } from 'mobx';
 export class MainStore {
 	page = 'Links';
+	notes = [];
 }
 decorate(MainStore, {
 	page: observable,

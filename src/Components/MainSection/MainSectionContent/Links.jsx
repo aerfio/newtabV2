@@ -15,7 +15,7 @@ const Links = () => {
 			<ul className={'list'}>
 				{Object.keys(links).map(el => {
 					return (
-						<li className={'list-element'}>
+						<li className={'list-element'} key={el}>
 							<a className={'link'} href={links[el]}>
 								{el}
 							</a>
