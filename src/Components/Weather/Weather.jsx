@@ -7,6 +7,7 @@ export class Weather extends Component {
         weatherCurr: undefined,
         weatherFiveDays: undefined,
         err: undefined,
+        loading: true,
     };
 
     componentDidMount = async () => {
@@ -38,17 +39,17 @@ export class Weather extends Component {
                 getCurrentWeather(location),
                 getFiveDaysWeather(location),
             ]);
-            this.setState({ weatherCurr: wthrCurr.data, weatherFiveDays: wthrFiveDays.data });
+            this.setState({ weatherCurr: wthrCurr.data, weatherFiveDays: wthrFiveDays.data, loading: false });
         } catch (err) {
             console.error(err.response);
             console.error(err.message);
             if (err.response) {
-                this.setState({ err: err.message + '\n\n' + err.response.data.message });
+                this.setState({ err: err.message + '\n\n' + err.response.data.message, loading: false });
                 return;
             }
 
             let errTxt = 'Nie pobrano danych.';
-            this.setState({ err: errTxt });
+            this.setState({ err: errTxt, loading: false });
         }
     };
 
@@ -107,11 +108,16 @@ Wind: ${wind}m/s`;
 
     render() {
         let text;
-        if (this.state.err) {
-            text = this.state.err;
+        if (this.state.loading) {
+            text = 'Ściągam dane...';
         } else {
-            text = this.getParsedWeatherForecast(this.state.weatherCurr, this.state.weatherFiveDays);
+            if (this.state.err) {
+                text = this.state.err;
+            } else {
+                text = this.getParsedWeatherForecast(this.state.weatherCurr, this.state.weatherFiveDays);
+            }
         }
+
         return (
             <textarea
                 className={'weather-textarea'}
