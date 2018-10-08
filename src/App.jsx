@@ -24,8 +24,7 @@ const AppWrapper = styled.div`
 		'weather    weather    date      saturday       saturday'
 		'weather    weather    clock     even_or_odd    even_or_odd'
 		'weather    weather    mainSection    .              .';
-	width: 100%;
-	height: 100%;
+	height: 100vh;
 	background-color: ${colors.primary};
 `;
 
