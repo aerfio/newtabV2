@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import store from '../../../../stores/MainStore';
+import store from '../../../stores/MainStore';
 import styled from 'styled-components';
 import { observer } from 'mobx-react';
 const InfoText = styled.p`
