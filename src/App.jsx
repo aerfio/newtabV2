@@ -9,6 +9,7 @@ import MainSection from './Components/MainSection/MainSection';
 import Plan from './Components/Plan/Plan';
 import Weather from './Components/Weather/Weather';
 import styled from 'styled-components';
+
 // if (process.env.NODE_ENV !== 'production') {
 // 	const { whyDidYouUpdate } = require('why-did-you-update');
 // 	whyDidYouUpdate(React);
@@ -30,19 +31,22 @@ const AppWrapper = styled.div`
 
 class App extends Component {
 	componentDidMount = () => {
-		this.props.store &&
-			this.props.store.notes &&
-			axios
-				.get('http://localhost:3000/getNotes')
-				.then(function(response) {
-					runInAction(`fetch notes`, () => {
-						console.log(this.props);
-						this.props.store.notes = response.data;
-					});
-				})
-				.catch(function(error) {
-					console.log(error);
+		axios
+			.get('http://localhost:3000/getNotes')
+			.then(response => {
+				const { store } = this.props;
+				runInAction(`fetch notes`, () => {
+					store.notes = response.data;
+					store.loading = false;
 				});
+			})
+			.catch(error => {
+				console.error(error);
+				const { store } = this.props;
+				runInAction(`save error message`, () => {
+					store.err = 'Błąd połączenia.';
+				});
+			});
 	};
 	render() {
 		return (
