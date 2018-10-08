@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './TradeSaturdays.css';
+import styled from 'styled-components';
 const listOfSaturdays = require('./listOfSaturdays.js');
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
 export class TradeSaturdays extends Component {
@@ -46,11 +46,18 @@ export class TradeSaturdays extends Component {
 		}
 
 		return (
-			<div className={'tradesaturdays-container'}>
+			<TradeSaturdaysWrapper>
 				<h1>{text}</h1>
-			</div>
+			</TradeSaturdaysWrapper>
 		);
 	}
 }
+
+const TradeSaturdaysWrapper = styled.div`
+	grid-area: saturday;
+	text-align: center;
+	color: white;
+	font-size: 0.9em;
+`;
 
 export default TradeSaturdays;

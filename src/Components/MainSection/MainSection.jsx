@@ -3,13 +3,18 @@ import Navbar from './Navbar/Navbar';
 import Searchbar from './Searchbar/Searchbar';
 import MainSectionContent from './MainSectionContent/MainSectionContent';
 import './MainSection.css';
+import styled from 'styled-components';
+const Wrapper = styled.section`
+	grid-area: mainSection;
+`;
+
 const MainSection = () => {
 	return (
-		<div className="main-section">
+		<Wrapper>
 			<Searchbar />
 			<Navbar />
 			<MainSectionContent />
-		</div>
+		</Wrapper>
 	);
 };
 

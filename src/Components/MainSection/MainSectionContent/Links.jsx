@@ -58,7 +58,9 @@ const Links = () => {
 				{Object.keys(links).map((el, index) => {
 					return (
 						<ListElement key={index}>
-							<Link href={links[el]}>{el}</Link>
+							<Link href={links[el]} target={'_blank'}>
+								{el}
+							</Link>
 						</ListElement>
 					);
 				})}

@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
-import './Navbar.css';
 import Navbutton from './NavButton/Navbutton';
 import store from './../../../stores/MainStore';
 import { observer } from 'mobx-react';
+import styled from 'styled-components';
 // if (process.env.NODE_ENV !== 'production') {
 // 	const { whyDidYouUpdate } = require('why-did-you-update');
 // 	whyDidYouUpdate(React);
 // }
-export class Navbar extends Component {
+const NavbarWrapper = styled.div`
+	display: flex;
+	justify-content: center;
+`;
+
+class Navbar extends Component {
 	render() {
 		return (
-			<div style={{ display: 'flex', justifyContent: 'center' }}>
+			<NavbarWrapper>
 				<Navbutton text="Links" store={store} />
 				<Navbutton text="Notes" store={store} />
-			</div>
+			</NavbarWrapper>
 		);
 	}
 }

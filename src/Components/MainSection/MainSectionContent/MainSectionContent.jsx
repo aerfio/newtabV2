@@ -1,5 +1,5 @@
 import React from 'react';
-import './MainSectionContent.css';
+
 import { observer } from 'mobx-react';
 import store from './../../../stores/MainStore';
 import Links from './Links';

@@ -1,13 +1,20 @@
 // eslint-disable
 import React from 'react';
-import './EvenOrOddWeek.css';
+import styled from 'styled-components';
+const EvenOrOddWeekContainer = styled.div`
+	grid-area: even_or_odd;
+	text-align: center;
+	color: white;
+	font-size: 0.9em;
+`;
+
 const EvenOrOddWeek = () => {
 	const parity = getWeek() % 2 === 0;
 
 	return (
-		<div className={'even_or_odd_week-container'}>
+		<EvenOrOddWeekContainer>
 			<h1>{`Jest ${parity ? '' : 'nie'}parzysty tydzień`}</h1>
-		</div>
+		</EvenOrOddWeekContainer>
 	);
 };
 export default EvenOrOddWeek;

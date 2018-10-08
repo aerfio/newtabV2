@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
-import './Clock.css';
+import styled from 'styled-components';
+
+const ClockContainer = styled.div`
+	grid-area: clock;
+	text-align: center;
+`;
+const ClockText = styled.h1`
+	color: white;
+`;
+
 export class Clock extends Component {
 	state = {
 		date: new Date(),
@@ -16,11 +25,11 @@ export class Clock extends Component {
 	}
 	render() {
 		return (
-			<div className={'clock-container'}>
-				<h1 className="clock-text">
+			<ClockContainer>
+				<ClockText>
 					{this.fixedTime(this.state.date.getHours()) + ':' + this.fixedTime(this.state.date.getMinutes())}
-				</h1>
-			</div>
+				</ClockText>
+			</ClockContainer>
 		);
 	}
 }

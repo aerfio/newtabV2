@@ -1,5 +1,5 @@
 import React from 'react';
-import './CurrentDate.css';
+import styled from 'styled-components';
 const monthsInPolish = [
 	'stycznia',
 	'lutego',
@@ -14,13 +14,19 @@ const monthsInPolish = [
 	'listopada',
 	'grudnia',
 ];
+const DateContainer = styled.div`
+	grid-area: date;
+	text-align: center;
+	color: white;
+`;
+
 const CurrentDate = () => {
 	const today = new Date();
 	const text = today.getDate() + ' ' + monthsInPolish[today.getMonth()];
 	return (
-		<div className={'currentdate-container'}>
+		<DateContainer>
 			<h1>{text}</h1>
-		</div>
+		</DateContainer>
 	);
 };
 
