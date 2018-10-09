@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import colors from './../../colors';
 const monthsInPolish = [
 	'stycznia',
 	'lutego',
@@ -17,15 +18,20 @@ const monthsInPolish = [
 const DateContainer = styled.div`
 	grid-area: date;
 	text-align: center;
+	margin: 40px 0 0 0;
 	color: white;
 `;
-
+const Header = styled.h1`
+	color: ${colors.text_color};
+	font-family: 'Noto Serif';
+	font-size: 3em;
+`;
 const CurrentDate = () => {
 	const today = new Date();
 	const text = today.getDate() + ' ' + monthsInPolish[today.getMonth()];
 	return (
 		<DateContainer>
-			<h1>{text}</h1>
+			<Header>{text}</Header>
 		</DateContainer>
 	);
 };

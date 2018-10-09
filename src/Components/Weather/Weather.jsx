@@ -114,10 +114,10 @@ Wind: ${wind}m/s`;
 			}
 		}
 
-		return <Textarea autoCorrect={'off'} spellCheck={false} readOnly={true} value={text} />;
+		return <StyledTextarea autoCorrect={'off'} spellCheck={false} readOnly={true} value={text} />;
 	}
 }
-const Textarea = styled.textarea`
+const StyledTextarea = styled.textarea`
 	border: none;
 	resize: none;
 	background-color: ${colors.primary};
@@ -126,5 +126,8 @@ const Textarea = styled.textarea`
 	width: 100%;
 	grid-area: weather;
 	outline-style: none;
+	font-family: 'Inconsolata', monospace;
+	font-size: 1.4em;
+	padding: 7px 0 0 7px;
 `;
 export default Weather;

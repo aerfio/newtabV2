@@ -34,6 +34,7 @@ const List = styled.ul`
 	justify-content: center;
 	flex-direction: column;
 	padding-inline-start: 0;
+	padding-bottom: 20px;
 `;
 const ListElement = styled.li`
 	text-align: center;
@@ -49,6 +50,8 @@ const Link = styled.a`
 `;
 const Wrapper = styled.section`
 	animation: ${anim} 0.2s;
+	width: 50%;
+	border-bottom: 1px solid ${colors.text_color};
 `;
 const Links = () => {
 	return (

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
+import colors from './../../../colors';
 import './Searchbar.css';
-
-const maxNumberOfElementsInStorage = 8;
+const maxNumberOfElementsInStorage = 10;
 const listOfRedirects = {
 	'!y': 'https://www.youtube.com/results?search_query=',
 	'!g': 'https://www.google.pl/search?q=',
@@ -37,13 +37,15 @@ function renderSuggestion(suggestion) {
 	return <span>{suggestion.name}</span>;
 }
 
+const renderInputComponent = inputProps => <input className={'searchbarInput'} {...inputProps} />;
+
 export default class Searchbar extends Component {
 	state = {
 		value: '',
 		suggestions: [],
 	};
 
-	onChange = (event, { newValue, method }) => {
+	onChange = (event, { newValue }) => {
 		this.setState({
 			value: newValue,
 		});
@@ -114,13 +116,13 @@ export default class Searchbar extends Component {
 	};
 	onSubmit = event => {
 		this.addToLocalStorage();
-		//window.location.assign(this.redirect());
+		window.location.assign(this.redirect());
 		event.preventDefault();
 	};
 	render() {
 		const { value, suggestions } = this.state;
 		const inputProps = {
-			placeholder: "Type 'c'",
+			placeholder: 'Search',
 			value,
 			onChange: this.onChange,
 		};
@@ -128,14 +130,73 @@ export default class Searchbar extends Component {
 		return (
 			<form onSubmit={this.onSubmit}>
 				<Autosuggest
+					theme={styles}
 					suggestions={suggestions}
 					onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
 					onSuggestionsClearRequested={this.onSuggestionsClearRequested}
 					getSuggestionValue={getSuggestionValue}
 					renderSuggestion={renderSuggestion}
 					inputProps={inputProps}
+					renderInputComponent={renderInputComponent}
 				/>
 			</form>
 		);
 	}
 }
+const styles = {
+	container: {
+		position: 'relative',
+		display: 'flex',
+		justifyItems: 'center',
+		alignItems: 'center',
+		width: '30vw',
+		borderBottom: `1px solid ${colors.text_color}`,
+	},
+	input: {
+		paddingLeft: '5px',
+		paddingBottom: '8px',
+		textAlign: 'center',
+		height: '50px',
+		fontFamily: 'Noto Serif, sans-serif',
+		color: `${colors.text_color}`,
+		fontSize: '2.3em',
+		border: 'none',
+		marginLeft: 'auto',
+		marginRight: 'auto',
+		width: '20vw',
+		backgroundColor: `${colors.primary}`,
+	},
+	inputFocused: {
+		outline: 'none',
+	},
+	suggestionsContainer: {
+		display: 'none',
+	},
+	suggestionsContainerOpen: {
+		display: 'block',
+		position: 'absolute',
+		top: '50px',
+		left: '5vw',
+		width: '20vw',
+		border: '1px solid #aaa',
+		backgroundColor: '#fff',
+		fontFamily: 'Helvetica, sans-serif',
+		fontWeight: '300',
+		fontSize: '16px',
+		borderBottomLeftRadius: '4px',
+		borderBottomRightRadius: ' 4px',
+		zIndex: '2',
+	},
+	suggestionsList: {
+		margin: '0',
+		padding: '0',
+		listStyleType: 'none',
+	},
+	suggestion: {
+		cursor: 'pointer',
+		padding: '10px 20px',
+	},
+	suggestionHighlighted: {
+		backgroundColor: '#ddd',
+	},
+};

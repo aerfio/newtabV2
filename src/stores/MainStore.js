@@ -1,15 +1,17 @@
 import { observable, decorate } from 'mobx';
 export class MainStore {
-	page = 'Links';
+	subpage = 'Links';
 	notes = [];
 	loading = true;
 	err = null;
+	page = 'Main';
 }
 decorate(MainStore, {
-	page: observable,
+	subpage: observable,
 	notes: observable,
 	loading: observable,
 	err: observable,
+	page: observable,
 });
 
 const store = new MainStore();

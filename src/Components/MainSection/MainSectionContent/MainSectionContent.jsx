@@ -4,7 +4,7 @@ import store from './../../../stores/MainStore';
 import Links from './Links';
 import Notes from './Notes';
 const MainSectionContent = () => {
-	if (store.page === 'Links') {
+	if (store.subpage === 'Links') {
 		return <Links />;
 	}
 	return <Notes />;

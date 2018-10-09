@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import colors from './../../colors';
 
 const ClockContainer = styled.div`
 	grid-area: clock;
 	text-align: center;
 `;
 const ClockText = styled.h1`
-	color: white;
+	color: ${colors.text_color};
+	font-family: 'Lora', sans-serif;
+	font-size: 4em;
 `;
 
 export class Clock extends Component {

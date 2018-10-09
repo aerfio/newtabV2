@@ -10,11 +10,15 @@ const StyledButton = styled.button`
 		color: blue;
 	}
 `;
-const Navbutton = ({ text, store }) => {
+const Navbutton = ({ text, store, pageChange }) => {
 	return (
 		<StyledButton
 			onClick={action(`change page to '${text}'`, () => {
-				store.page = text;
+				if (pageChange) {
+					store.page = 'Calendar';
+				} else {
+					store.subpage = text;
+				}
 			})}>
 			{text}
 		</StyledButton>

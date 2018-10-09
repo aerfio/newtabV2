@@ -3,16 +3,29 @@ import axios from 'axios';
 import store from '../../../stores/MainStore';
 import styled from 'styled-components';
 import { observer } from 'mobx-react';
+import { runInAction } from 'mobx';
+
 const InfoText = styled.p`
 	color: white;
 `;
 
 class Notes extends Component {
+	updateNotes = async () => {
+		try {
+			const info = await axios.get('http://localhost:3000/getNotes');
+			runInAction('update notes data', () => {
+				store.notes = info.data;
+			});
+		} catch (error) {
+			console.error(error);
+		}
+	};
 	addNote = async () => {
 		axios
 			.post('http://localhost:3000/addNote', { text: 'xd' })
-			.then(function(response) {
+			.then(response => {
 				console.log(response.data);
+				this.updateNotes();
 			})
 			.catch(function(error) {
 				console.log(error);
@@ -21,9 +34,10 @@ class Notes extends Component {
 
 	deleteNote = async id => {
 		axios
-			.post('http://localhost:3000/deleteNote', { _id: id })
-			.then(function(response) {
+			.delete('http://localhost:3000/deleteNote', { data: { _id: id } })
+			.then(response => {
 				console.log(response.data);
+				this.updateNotes();
 			})
 			.catch(function(error) {
 				console.log(error);
@@ -42,7 +56,7 @@ class Notes extends Component {
 						<button onClick={this.addNote}>add note</button>
 						<ul>
 							{store.notes.map(e => (
-								<li key={e._id}>
+								<li style={{ color: 'white' }} key={e._id}>
 									{e.text}
 									<button onClick={() => this.deleteNote(e._id)}>delete me</button>
 								</li>
