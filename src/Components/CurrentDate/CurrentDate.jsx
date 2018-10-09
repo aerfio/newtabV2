@@ -23,7 +23,7 @@ const DateContainer = styled.div`
 `;
 const Header = styled.h1`
 	color: ${colors.text_color};
-	font-family: 'Noto Serif';
+	font-family: 'Noto Serif', serif;
 	font-size: 3em;
 `;
 const CurrentDate = () => {

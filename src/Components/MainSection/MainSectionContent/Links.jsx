@@ -20,15 +20,17 @@ const anim = keyframes`
     }
 `;
 const Header = styled.h1`
-	margin: 0;
 	text-align: center;
 	animation: ${anim};
 	color: ${colors.text_color};
+	font-family: 'Noto Serif', serif;
+	letter-spacing: 3px;
+	font-weight: 700;
+	font-size: 2.5em;
+	letter-spacing: 4px;
 `;
 const List = styled.ul`
 	animation: ${anim} 0.2s;
-	margin: 0;
-	display: inline-block;
 	list-style-type: none;
 	display: flex;
 	justify-content: center;
@@ -42,16 +44,25 @@ const ListElement = styled.li`
 `;
 const Link = styled.a`
 	color: ${colors.text_color};
+	font-family: 'Noto Serif', serif;
 	text-decoration: none;
 	&:visited,
 	&:hover {
 		text-decoration: none;
 	}
+	font-size: 1.2em;
+	letter-spacing: 0.15px;
 `;
 const Wrapper = styled.section`
 	animation: ${anim} 0.2s;
 	width: 50%;
 	border-bottom: 1px solid ${colors.text_color};
+	&:hover {
+		background-color: ${colors.text_color};
+	}
+	&:hover ${Header}, &:hover ${Link} {
+		color: ${colors.primary};
+	}
 `;
 const Links = () => {
 	return (

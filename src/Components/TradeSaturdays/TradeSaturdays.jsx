@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import colors from './../../colors';
 const listOfSaturdays = require('./listOfSaturdays.js');
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
 export class TradeSaturdays extends Component {
@@ -47,17 +48,20 @@ export class TradeSaturdays extends Component {
 
 		return (
 			<TradeSaturdaysWrapper>
-				<h1>{text}</h1>
+				<Text>{text}</Text>
 			</TradeSaturdaysWrapper>
 		);
 	}
 }
-
+const Text = styled.h1`
+	color: ${colors.text_color};
+	font-family: 'Noto Serif', serif;
+	font-size: 2.5em;
+`;
 const TradeSaturdaysWrapper = styled.div`
 	grid-area: saturday;
 	text-align: center;
-	color: white;
-	font-size: 0.9em;
+	padding: 20px 20px 0 0;
 `;
 
 export default TradeSaturdays;
