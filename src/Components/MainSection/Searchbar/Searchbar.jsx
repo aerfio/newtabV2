@@ -173,6 +173,7 @@ export default class Searchbar extends Component {
 		);
 	}
 }
+
 const styles = {
 	container: {
 		position: 'relative',
