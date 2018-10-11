@@ -3,10 +3,7 @@ import Navbutton from './Navbutton';
 import store from './../../../stores/MainStore';
 import { observer } from 'mobx-react';
 import styled from 'styled-components';
-// if (process.env.NODE_ENV !== 'production') {
-// 	const { whyDidYouUpdate } = require('why-did-you-update');
-// 	whyDidYouUpdate(React);
-// }
+
 const NavbarWrapper = styled.div`
 	display: flex;
 	justify-content: center;

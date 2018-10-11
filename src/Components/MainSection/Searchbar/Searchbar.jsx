@@ -66,7 +66,7 @@ const Inpt = styled.input`
 	}
 `;
 function renderInputComponent(inputProps) {
-	return <Inpt className={'searchbarInput'} {...inputProps} />;
+	return <Inpt autoFocus {...inputProps} />;
 }
 
 export default class Searchbar extends Component {

@@ -14,16 +14,20 @@ const Wrapper = styled.section`
 	height: 100vh;
 `;
 const Button = styled.button`
-	width: 10%;
+	padding: 10px;
+	color: ${colors.text_color};
+	background-color: ${colors.primary};
+	border: 1px solid ${colors.text_color};
+	outline: none;
+	font-size: 1.2em;
 `;
 const IframeWrapper = styled.div`
-	margin: 50px 0px 50px 0px;
+	margin: 20px 0px 20px 0px;
 	width: 85%;
 	height: 80%;
 `;
 const calendarUrl = process.env.REACT_APP_CALENDAR_IFRAME;
 const Calendar = () => {
-	console.log(colors.primary.substr(1));
 	return (
 		<Wrapper>
 			<IframeWrapper>

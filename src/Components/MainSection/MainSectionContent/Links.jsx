@@ -1,27 +1,21 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 import colors from '../../../colors';
 
 const links = {
 	Facebook: 'https://www.facebook.com/home.php',
-	'Img Search': 'https://images.google.com/',
+	Onet: 'https://www.onet.pl/',
 	'/mu/': 'https://boards.4chan.org/mu/',
 	Pogoda: 'https://www.google.pl/search?q=pogoda&cad=h',
-	Drive: 'https://drive.google.com/drive/my-drive',
 	Platforma: 'https://platforma.polsl.pl/rau1/course/index.php?categoryid=26',
+	'Google Drive': 'https://drive.google.com/drive/my-drive',
+	'Img Search': 'https://images.google.com/',
 };
-const anim = keyframes`
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-`;
+
 const Header = styled.h1`
 	text-align: center;
-	animation: ${anim};
+	transition-duration: 0.15s;
 	color: ${colors.text_color};
 	font-family: 'Noto Serif', serif;
 	letter-spacing: 3px;
@@ -29,9 +23,10 @@ const Header = styled.h1`
 	font-size: 2em;
 	letter-spacing: 2px;
 	margin-top: 10px;
+	margin-bottom: 15px;
 `;
 const List = styled.ul`
-	animation: ${anim} 0.2s;
+	transition-duration: 0.15s;
 	list-style-type: none;
 	display: flex;
 	justify-content: center;
@@ -42,10 +37,11 @@ const List = styled.ul`
 `;
 const ListElement = styled.li`
 	text-align: center;
-	animation: ${anim};
+	transition-duration: 0.15s;
 `;
 const Link = styled.a`
 	color: ${colors.text_color};
+	transition-duration: 0.15s;
 	font-family: 'Noto Serif', serif;
 	text-decoration: none;
 	&:visited,
@@ -56,8 +52,8 @@ const Link = styled.a`
 	letter-spacing: 0.15px;
 `;
 const Wrapper = styled.section`
-	animation: ${anim} 0.2s;
 	width: 50%;
+	transition-duration: 0.15s;
 	border-bottom: 1px solid ${colors.text_color};
 	&:hover {
 		background-color: ${colors.text_color};

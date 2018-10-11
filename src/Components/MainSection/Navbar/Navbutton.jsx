@@ -3,11 +3,12 @@ import { action } from 'mobx';
 import { observer } from 'mobx-react';
 import styled from 'styled-components';
 import colors from './../../../colors';
+
 const StyledButton = styled.button`
 	margin: 20px 20px 20px 20px;
-	width: 10vw;
-	height: 10vh;
-
+	min-width: 10vw;
+	min-height: 10vh;
+	transition-duration: 0.15s;
 	background-color: ${colors.primary};
 	border: 1px solid ${colors.text_color};
 	color: ${colors.text_color};

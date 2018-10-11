@@ -15,23 +15,19 @@ import Plan from './Components/Plan/Plan';
 import Weather from './Components/Weather/Weather';
 import Calendar from './Calendar';
 
-// if (process.env.NODE_ENV !== 'production') {
-// 	const { whyDidYouUpdate } = require('why-did-you-update');
-// 	whyDidYouUpdate(React);
-// }
 import './theme/globalStyle';
 
 import colors from './colors';
 const AppWrapper = styled.div`
 	display: grid;
 	grid-template-columns: 10fr 10fr 30fr 10fr 10fr;
-	grid-template-rows: 20vh 15vh auto;
+	grid-template-rows: 17vh 13vh auto;
 	grid-template-areas:
 		'weather    weather    date      saturday       saturday'
 		'weather    weather    clock     even_or_odd    even_or_odd'
 		'weather    weather    mainSection    .              .';
 	background-color: ${colors.primary};
-	height: 100vh;
+	min-height: 100vh;
 	grid-column-gap: 0;
 	grid-row-gap: 0;
 `;
