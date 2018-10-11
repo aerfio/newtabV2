@@ -66,7 +66,7 @@ const Inpt = styled.input`
 	}
 `;
 function renderInputComponent(inputProps) {
-	return <Inpt autoFocus {...inputProps} />;
+	return <Inpt autoFocus spellCheck={'false'} autoComplete={'off'} {...inputProps} />;
 }
 
 export default class Searchbar extends Component {
@@ -187,13 +187,14 @@ const styles = {
 		paddingBottom: '8px',
 		textAlign: 'center',
 		height: '50px',
+		width: '30vw',
 		fontFamily: 'Noto Serif, sans-serif',
 		color: `${colors.text_color}`,
 		fontSize: '2.3em',
 		border: 'none',
 		marginLeft: 'auto',
 		marginRight: 'auto',
-		width: '20vw',
+
 		backgroundColor: `${colors.primary}`,
 	},
 	inputFocused: {
