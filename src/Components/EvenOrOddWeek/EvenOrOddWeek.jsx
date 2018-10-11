@@ -5,14 +5,13 @@ import colors from './../../colors';
 const EvenOrOddWeekContainer = styled.div`
 	grid-area: even_or_odd;
 	text-align: center;
-	color: white;
-	font-size: 0.9em;
 `;
 const Text = styled.h1`
 	color: ${colors.text_color};
 	font-family: 'Noto Serif', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-size: 2.5em;
 	padding-top: 20px;
+	padding-right: 20px;
 `;
 const EvenOrOddWeek = () => {
 	const parity = getWeek() % 2 === 0;

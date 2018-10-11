@@ -18,13 +18,13 @@ const monthsInPolish = [
 const DateContainer = styled.div`
 	grid-area: date;
 	text-align: center;
-	margin: 40px 0 0 0;
-	color: white;
+	padding: 0 0 0 0;
 `;
 const Header = styled.h1`
 	color: ${colors.text_color};
 	font-family: 'Noto Serif', serif;
 	font-size: 3em;
+	padding-top: 20px;
 `;
 const CurrentDate = () => {
 	const today = new Date();

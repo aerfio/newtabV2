@@ -122,12 +122,12 @@ const StyledTextarea = styled.textarea`
 	resize: none;
 	background-color: ${colors.primary};
 	color: ${colors.text_color};
-	height: 100%;
 	width: 100%;
+	max-height: 100vh;
 	grid-area: weather;
 	outline-style: none;
 	font-family: 'Inconsolata', monospace;
-	font-size: 1.4em;
+	font-size: 1.1em;
 	padding: 7px 0 0 7px;
 `;
 export default Weather;

@@ -26,8 +26,9 @@ const Header = styled.h1`
 	font-family: 'Noto Serif', serif;
 	letter-spacing: 3px;
 	font-weight: 700;
-	font-size: 2.5em;
-	letter-spacing: 4px;
+	font-size: 2em;
+	letter-spacing: 2px;
+	margin-top: 10px;
 `;
 const List = styled.ul`
 	animation: ${anim} 0.2s;
@@ -37,6 +38,7 @@ const List = styled.ul`
 	flex-direction: column;
 	padding-inline-start: 0;
 	padding-bottom: 20px;
+	margin-top: 0;
 `;
 const ListElement = styled.li`
 	text-align: center;

@@ -16,6 +16,6 @@ ReactDOM.render(
 registerServiceWorker();
 WebFont.load({
 	google: {
-		families: ['Inconsolata:400', 'Lora', 'Noto Serif'],
+		families: ['Inconsolata:400', 'Lora', 'Noto Serif:400,700'],
 	},
 });

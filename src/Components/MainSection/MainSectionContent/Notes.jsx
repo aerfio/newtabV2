@@ -12,7 +12,7 @@ const InfoText = styled.p`
 class Notes extends Component {
 	updateNotes = async () => {
 		try {
-			const info = await axios.get('http://localhost:3000/getNotes');
+			const info = await axios.get(`${process.env.REACT_APP_BACKEND}getNotes`);
 			runInAction('update notes data', () => {
 				store.notes = info.data;
 			});
@@ -22,7 +22,7 @@ class Notes extends Component {
 	};
 	addNote = async () => {
 		axios
-			.post('http://localhost:3000/addNote', { text: 'xd' })
+			.post(`${process.env.REACT_APP_BACKEND}addNote`, { text: 'xd' })
 			.then(response => {
 				console.log(response.data);
 				this.updateNotes();
@@ -34,7 +34,7 @@ class Notes extends Component {
 
 	deleteNote = async id => {
 		axios
-			.delete('http://localhost:3000/deleteNote', { data: { _id: id } })
+			.delete(`${process.env.REACT_APP_BACKEND}deleteNote`, { data: { _id: id } })
 			.then(response => {
 				console.log(response.data);
 				this.updateNotes();

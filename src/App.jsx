@@ -20,24 +20,26 @@ import Calendar from './Calendar';
 // 	whyDidYouUpdate(React);
 // }
 import './theme/globalStyle';
+
 import colors from './colors';
 const AppWrapper = styled.div`
 	display: grid;
 	grid-template-columns: 10fr 10fr 30fr 10fr 10fr;
-	//grid-template-rows: 25% 100px auto;
-	grid-template-rows: 1fr 1fr 6fr;
+	grid-template-rows: 20vh 15vh auto;
 	grid-template-areas:
 		'weather    weather    date      saturday       saturday'
 		'weather    weather    clock     even_or_odd    even_or_odd'
 		'weather    weather    mainSection    .              .';
-	height: 100vh;
 	background-color: ${colors.primary};
+	height: 100vh;
+	grid-column-gap: 0;
+	grid-row-gap: 0;
 `;
 
 class App extends Component {
 	componentDidMount = () => {
 		axios
-			.get('http://localhost:3000/getNotes')
+			.get(`${process.env.REACT_APP_BACKEND}getNotes`)
 			.then(response => {
 				runInAction(`fetch notes`, () => {
 					store.notes = response.data;
