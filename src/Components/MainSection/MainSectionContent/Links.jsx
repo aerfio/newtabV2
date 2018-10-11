@@ -32,8 +32,8 @@ const List = styled.ul`
 	justify-content: center;
 	flex-direction: column;
 	padding-inline-start: 0;
-	padding-bottom: 20px;
-	margin-top: 0;
+	margin-bottom: 20px;
+	margin-top: 20px;
 `;
 const ListElement = styled.li`
 	text-align: center;
@@ -65,7 +65,6 @@ const Wrapper = styled.section`
 const Links = () => {
 	return (
 		<Wrapper>
-			<Header>Links</Header>
 			<List>
 				{Object.keys(links).map((el, index) => {
 					return (

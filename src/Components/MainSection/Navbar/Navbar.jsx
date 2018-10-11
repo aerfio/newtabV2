@@ -13,9 +13,9 @@ class Navbar extends Component {
 	render() {
 		return (
 			<NavbarWrapper>
-				<Navbutton text="Links" store={store} />
-				<Navbutton text="Notes" store={store} />
-				<Navbutton pageChange text="Calendar" store={store} />
+				<Navbutton text="Linki" store={store} />
+				<Navbutton text="Notatki" store={store} />
+				<Navbutton pageChange text="Kalendarz" store={store} />
 			</NavbarWrapper>
 		);
 	}

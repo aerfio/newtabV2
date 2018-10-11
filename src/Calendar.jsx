@@ -39,7 +39,7 @@ const Calendar = () => {
 						store.page = 'Main';
 					});
 				}}>
-				Go back!
+				Powrót
 			</Button>
 		</Wrapper>
 	);
