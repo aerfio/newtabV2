@@ -15,6 +15,10 @@ const listOfRedirects = {
 function getSuggestions(value) {
 	let notesInLocalStorage = [];
 	for (let i = 0; i < localStorage.length; i++) {
+		if (localStorage.key(i) === '1') {
+			console.log(typeof localStorage.key(i));
+			continue;
+		}
 		notesInLocalStorage = [...notesInLocalStorage, localStorage.getItem(localStorage.key(i))].reverse();
 	}
 	if (value.trim() === '') {
@@ -95,6 +99,9 @@ export default class Searchbar extends Component {
 	addToLocalStorage = () => {
 		let notesInLocalStorage = [];
 		for (let i = 0; i < maxNumberOfElementsInStorage; i++) {
+			if (localStorage.key(i) === '1') {
+				continue;
+			}
 			notesInLocalStorage = [...notesInLocalStorage, localStorage.getItem(localStorage.key(i))];
 		}
 		if (notesInLocalStorage.includes(this.state.value.trim())) {

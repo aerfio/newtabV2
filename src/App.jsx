@@ -51,24 +51,29 @@ class App extends Component {
 			});
 	};
 	render() {
-		switch (store.page) {
-			case 'Main':
-				return (
-					<AppWrapper>
-						<Clock />
-						<TradeSaturdays />
-						<CurrentDate />
-						<Plan />
-						<Weather />
-						<EvenOrOddWeek />
-						<MainSection />
-					</AppWrapper>
-				);
-			case 'Calendar':
-				return <Calendar />;
+		if (localStorage.getItem('1') !== process.env.REACT_APP_SECRET) {
+			//laziest security ever
+			return <p>No access</p>;
+		} else {
+			switch (store.page) {
+				case 'Main':
+					return (
+						<AppWrapper>
+							<Clock />
+							<TradeSaturdays />
+							<CurrentDate />
+							<Plan />
+							<Weather />
+							<EvenOrOddWeek />
+							<MainSection />
+						</AppWrapper>
+					);
+				case 'Calendar':
+					return <Calendar />;
 
-			default:
-				return <p>Wrong page!</p>;
+				default:
+					return <p>Wrong page!</p>;
+			}
 		}
 	}
 }
