@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import registerServiceWorker, { unregister } from './registerServiceWorker';
+import registerServiceWorker from './registerServiceWorker';
 import './mobxConfig';
 import DevTools from 'mobx-react-devtools';
 import WebFont from 'webfontloader';
@@ -13,7 +13,7 @@ ReactDOM.render(
 	</React.Fragment>,
 	document.getElementById('root'),
 );
-unregister();
+registerServiceWorker();
 WebFont.load({
 	google: {
 		families: ['Inconsolata:400', 'Lora', 'Noto Serif:400,700'],

@@ -16,7 +16,6 @@ function getSuggestions(value) {
 	let notesInLocalStorage = [];
 	for (let i = 0; i < localStorage.length; i++) {
 		if (localStorage.key(i) === '1') {
-			console.log(typeof localStorage.key(i));
 			continue;
 		}
 		notesInLocalStorage = [...notesInLocalStorage, localStorage.getItem(localStorage.key(i))].reverse();

@@ -87,7 +87,7 @@ Wind: ${wind}m/s`;
 				const time = el.dt_txt.substring(11, 16);
 				const date = el.dt_txt.substring(8, 10) + '-' + el.dt_txt.substring(5, 7);
 				const temp = (el.main.temp < 10 ? '0' + el.main.temp.toFixed(2) : el.main.temp.toFixed(2)) + '°C';
-				const wind = `${el.wind.speed.toFixed(2)}m/s`;
+				//const wind = `${el.wind.speed.toFixed(2)}m/s`;
 				const tmpDesc = el.weather[0].description;
 				const description = tmpDesc[0].toUpperCase() + tmpDesc.substring(1);
 				let separator = '';
@@ -96,7 +96,7 @@ Wind: ${wind}m/s`;
 					let compareDates = prevElement.dt_txt.substring(8, 10) + '-' + prevElement.dt_txt.substring(5, 7) !== date;
 					separator = compareDates ? '\n' : '';
 				}
-				return `${separator}${weekday} ${date} ${time}: ${temp}, ${wind}, ${description}`;
+				return `${separator}${weekday} ${date} ${time}: ${temp}, ${description}`;
 			})
 			.join('\n');
 		return ret + '\n\n\n' + longForecast;
