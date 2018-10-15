@@ -52,6 +52,8 @@ class App extends Component {
 	};
 	render() {
 		if (localStorage.getItem('1') !== process.env.REACT_APP_SECRET) {
+			console.log(process.env.REACT_APP_SECRET);
+			console.log(typeof process.env.REACT_APP_SECRET);
 			//laziest security ever
 			return <p>No access</p>;
 		} else {
