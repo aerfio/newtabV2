@@ -1,6 +1,6 @@
 import { observable, decorate } from 'mobx';
 export class MainStore {
-	subpage = 'Links';
+	subpage = 'Linki';
 	notes = [];
 	loading = true;
 	err = null;
