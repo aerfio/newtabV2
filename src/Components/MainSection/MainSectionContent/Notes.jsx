@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import store from '../../../stores/MainStore';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { observer } from 'mobx-react';
 import { runInAction } from 'mobx';
 import colors from './../../../colors';
@@ -102,11 +102,22 @@ const Text = styled.p`
 	margin: 15px 0 5px 0;
 	line-height: 1.4em;
 `;
+const fadeInUp = keyframes`
+	from {
+		opacity: 0;
+		transform: translateY(75%);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+`;
 const ListElement = styled.li`
 	border-bottom: 1px solid ${colors.text_color};
 	display: flex;
 	justify-content: space-between;
 	min-width: 40vw;
+	animation: ${fadeInUp} 0.75s;
 `;
 const List = styled.ul`
 	max-width: 40vw;

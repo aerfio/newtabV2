@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import colors from '../../../colors';
 
@@ -51,9 +51,15 @@ const Link = styled.a`
 	font-size: 1.2em;
 	letter-spacing: 0.15px;
 `;
+const fadeIn = keyframes`from{
+opacity:0;
+}to{
+	opacity:1;
+}`;
 const Wrapper = styled.section`
 	width: 50%;
 	transition-duration: 0.15s;
+	animation: ${fadeIn} 0.2s;
 	border-bottom: 1px solid ${colors.text_color};
 	&:hover {
 		background-color: ${colors.text_color};

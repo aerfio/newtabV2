@@ -112,7 +112,7 @@ export default class Searchbar extends Component {
 			if (this.state.value !== '') {
 				notesInLocalStorage = [...notesInLocalStorage.slice(1), this.state.value];
 				notesInLocalStorage.forEach((element, index) => {
-					localStorage.setItem(`${index + 1}`, element);
+					localStorage.setItem(`${index + 2}`, element);
 				});
 			}
 		}
@@ -214,10 +214,9 @@ const styles = {
 		display: 'block',
 		position: 'absolute',
 		top: '50px',
-		left: '5vw',
-		width: '20vw',
-		border: '1px solid #aaa',
-		backgroundColor: '#fff',
+		width: '30vw',
+		border: `1px solid ${colors.text_color}`,
+		backgroundColor: `${colors.primary}`,
 		fontFamily: 'Helvetica, sans-serif',
 		fontWeight: '300',
 		fontSize: '16px',
@@ -233,8 +232,15 @@ const styles = {
 	suggestion: {
 		cursor: 'pointer',
 		padding: '10px 20px',
+		color: `${colors.text_color}`,
+		fontFamily: 'Noto Serif, sans-serif',
 	},
 	suggestionHighlighted: {
-		backgroundColor: '#ddd',
+		backgroundColor: `rgba(
+			${hexToRgb(colors.text_color).r},
+			${hexToRgb(colors.text_color).g},
+			${hexToRgb(colors.text_color).b},
+			0.1
+		)`,
 	},
 };
