@@ -5,6 +5,7 @@ import colors from '../../../colors';
 
 const links = {
     Facebook: 'https://www.facebook.com/home.php',
+    Kalendarz: 'https://calendar.google.com/calendar/r',
     Onet: 'https://www.onet.pl/',
     '/mu/': 'https://boards.4chan.org/mu/',
     Pogoda: 'https://www.google.pl/search?q=pogoda&cad=h',
