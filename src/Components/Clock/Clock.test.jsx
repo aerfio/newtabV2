@@ -13,7 +13,6 @@ describe("Clock component", () => {
     test("should render", () => {
         const wrapper = shallow(<Clock />);
         expect(wrapper.find("h1")).toBeTruthy();
-        // expect(wrapper.find("h1")).toExist();
     });
     test("should render with proper text", () => {
         const wrapper = shallow(<Clock />);
