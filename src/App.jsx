@@ -15,8 +15,6 @@ import Plan from "./Components/Plan/Plan";
 import Weather from "./Components/Weather/Weather";
 import Calendar from "./Calendar";
 
-import "./theme/globalStyle";
-
 import colors from "./colors";
 const AppWrapper = styled.div`
     display: grid;
@@ -36,13 +34,13 @@ class App extends Component {
     componentDidMount = () => {
         axios
             .get(`${process.env.REACT_APP_BACKEND}getNotes`)
-            .then(response => {
+            .then((response) => {
                 runInAction(`fetch notes`, () => {
                     store.notes = response.data;
                     store.loading = false;
                 });
             })
-            .catch(error => {
+            .catch((error) => {
                 console.error(error);
 
                 runInAction(`save error message`, () => {
