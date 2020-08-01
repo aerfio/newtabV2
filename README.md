@@ -1,6 +1,7 @@
 <p style='font-size:40px' align="center">
 newtab
 </p>
+# DEPRECATED -> I'll open source my new one soon
 
 # Replacement of about://newtab in React.js
 
